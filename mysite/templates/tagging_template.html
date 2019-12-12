@@ -1,0 +1,29 @@
+<style>
+.errorlist
+    {
+        color: red;
+    }
+</style>
+
+
+<div>
+    <h1><a href="/">Tagging Page</a></h1>
+</div>
+
+<div>
+    <p>searchWord: {{ unlabeled.searchWord }}</p>
+    <p>searchResult: {{ unlabeled.searchResult }}</p>
+    <p>websiteDescription: {{ unlabeled.websiteDescription }}</p>
+</div>
+
+<form method="post" novalidate>
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">Submit</button>
+</form>
+
+<!--{% for form in form %}-->
+<!--    <div>-->
+<!--        <p>{{ form.data_tag }}</p>-->
+<!--    </div>-->
+<!--{% endfor %}-->
