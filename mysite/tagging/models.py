@@ -12,3 +12,9 @@ class SearchResult(models.Model):
     websiteDescription = models.TextField()
     label = models.TextField()
 
+
+
+#--------Utils--------#
+def get_model_fields(model):
+    return model._meta.fields
+

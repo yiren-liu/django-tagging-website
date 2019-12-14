@@ -1,26 +1,245 @@
-<style>
-.errorlist
-    {
-        color: red;
-    }
-</style>
+<!--style sheet-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Cover Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        /*error style*/
+        .errorlist
+        {
+            color: red;
+        }
+
+        /*table style*/
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg .tg-baqh{text-align:center;vertical-align:top}
+        .tg .tg-0lax{text-align:left;vertical-align:top}
+
+        /*define gap*/
+        .gap-10 {
+            width:100%;
+            height:10px;
+        }
+        .gap-20 {
+            width:100%;
+            height:20px;
+        }
+        .gap-30 {
+            width:100%;
+            height:30px;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tagging.css' %}">
+</head>
 
 
-<div>
-    <h1><a href="/">Tagging Page</a></h1>
+
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'tagging.css' %}">
+</head>
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <!--    <header class="masthead mb-auto">-->
+    <!--        <div class="inner">-->
+    <!--            <h3 class="masthead-brand">Cover</h3>-->
+    <!--            <nav class="nav nav-masthead justify-content-center">-->
+    <!--                <a class="nav-link active" href="#">Home</a>-->
+    <!--                <a class="nav-link" href="#">Features</a>-->
+    <!--                <a class="nav-link" href="#">Contact</a>-->
+    <!--            </nav>-->
+    <!--        </div>-->
+    <!--    </header>-->
+
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Tagging Page</h1>
+        <!--        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>-->
+        <!--        <p class="lead">-->
+        <!--            <a href="#" class="btn btn-lg btn-secondary">Learn more</a>-->
+        <!--        </p>-->
+        <p class="lead">searchWord: <br>{{ unlabeled.searchWord }}</p>
+        <p class="lead">searchResult: <br>{{ unlabeled.searchResult }}</p>
+        <p class="lead">websiteDescription: <br>{{ unlabeled.websiteDescription }}</p>
+
+
+        <table class="tg" align="center">
+            <tr>
+                <th class="tg-baqh">searchWord</th>
+                <th class="tg-baqh">searchResult</th>
+                <th class="tg-baqh">websiteDescription</th>
+            </tr>
+            <tr>
+                <td class="tg-baqh">{{ unlabeled.searchWord }}</td>
+                <td class="tg-baqh">{{ unlabeled.searchResult }}</td>
+                <td class="tg-baqh">{{ unlabeled.websiteDescription }}</td>
+            </tr>
+        </table>
+
+        <!-- this div will give a gap of 10px -->
+        <div class="gap-10"></div>
+
+        <div style="text-align: center;">
+            <form id="form1" method="post" novalidate>
+                {% csrf_token %}
+
+                <!--                {% for field in form %}-->
+                <!--                <div class="fieldWrapper">-->
+                <!--                    {{ field.errors }}-->
+                <!--                    {{ field.label_tag }}-->
+                <!--                    {{ field }}-->
+                <!--                </div>-->
+                <!--                {% endfor %}-->
+                <div class="fieldWrapper">
+                    {{ form.data_tag.errors }}
+                    {{ form.data_tag.label_tag }}
+                    {{ form.data_tag }}
+                </div>
+
+                <div class="fieldWrapper" hidden>
+                    {{ form.data_pk.errors }}
+                    {{ form.data_pk.label_tag }}
+                    {{ form.data_pk }}
+                </div>
+
+                <input type="submit" value="Submit">
+            </form>
+
+
+            <!--database debug-->
+            <head>
+                <title>reset test database</title>
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                <script>
+                    function resetAlert() {
+                        alert("test database reset called!");
+                    }
+                </script>
+            </head>
+            <body>
+            <button onclick="resetAlert();window.location.href='reset_test_database/';">
+                <!--            <button onclick="reset();window.location.href='reset_test_database/';">-->
+                test database reset
+            </button>
+
+            <!-- this div will give a gap of 10px -->
+            <div class="gap-10"></div>
+
+            <button onclick="window.location.href='download_as_csv/';">
+                download all data as .csv file
+            </button>
+            </body>
+
+
+        </div>
+
+    </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>
+                Check <a href="https://github.com/JohnLiu97/django-tagging-website.git">Git Repo</a> for source code.
+            </p>
+        </div>
+    </footer>
 </div>
+</body>
 
-<div>
-    <p>searchWord: {{ unlabeled.searchWord }}</p>
-    <p>searchResult: {{ unlabeled.searchResult }}</p>
-    <p>websiteDescription: {{ unlabeled.websiteDescription }}</p>
-</div>
 
-<form method="post" novalidate>
-  {% csrf_token %}
-  {{ form }}
-  <button type="submit">Submit</button>
-</form>
+
+<!--<div style="text-align: center;">-->
+<!--    <h1><a href="/">Tagging Page</a></h1>-->
+<!--</div>-->
+
+<!--<div style="text-align: center;">-->
+<!--    <p>searchWord: {{ unlabeled.searchWord }}</p>-->
+<!--    <p>searchResult: {{ unlabeled.searchResult }}</p>-->
+<!--    <p>websiteDescription: {{ unlabeled.websiteDescription }}</p>-->
+<!--</div>-->
+
+<!--<table class="tg" align="center">-->
+<!--    <tr>-->
+<!--        <th class="tg-baqh">searchWord</th>-->
+<!--        <th class="tg-baqh">searchResult</th>-->
+<!--        <th class="tg-baqh">websiteDescription</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td class="tg-baqh">{{ unlabeled.searchWord }}</td>-->
+<!--        <td class="tg-baqh">{{ unlabeled.searchResult }}</td>-->
+<!--        <td class="tg-baqh">{{ unlabeled.websiteDescription }}</td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+<!--&lt;!&ndash; this div will give a gap of 10px &ndash;&gt;-->
+<!--<div class="gap-10"></div>-->
+
+<!--<div style="text-align: center;">-->
+<!--    <form method="post" novalidate>-->
+<!--        {% csrf_token %}-->
+<!--        {{ form }}-->
+<!--        <button type="submit">Submit</button>-->
+<!--    </form>-->
+
+
+<!--    &lt;!&ndash;database debug&ndash;&gt;-->
+<!--    <head>-->
+<!--        <title>reset test database</title>-->
+<!--        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<!--        <script>-->
+<!--            function reset() {-->
+<!--                $.get('reset_test_database', function () {-->
+<!--                    alert("test database reset called!");-->
+<!--                });-->
+<!--            }-->
+<!--        </script>-->
+<!--    </head>-->
+<!--    <body>-->
+<!--    <button onclick="reset();window.location.href='reset_test_database';">-->
+<!--        test database reset!-->
+<!--    </button>-->
+<!--    </body>-->
+<!--</div>-->
+
+
+
 
 <!--{% for form in form %}-->
 <!--    <div>-->
